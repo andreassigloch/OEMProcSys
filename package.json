@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx serve public -s -l 3000",
     "build": "echo 'No build step required for vanilla JS PWA'",
-    "dev": "npx serve public -s -l 3000 --reload",
+    "dev": "npx serve public -s -l 3000",
     "prepare": "./deploy.sh",
     "validate": "echo 'Validating project structure...' && test -f public/index.html && test -f public/manifest.json && test -f public/sw.js && echo 'Validation passed!'",
     "lint": "echo 'Linting not configured'",
