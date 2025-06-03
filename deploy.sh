@@ -26,47 +26,56 @@ if [ ! -d "node_modules" ]; then
     npm install
 fi
 
-# Run basic validation
-echo "🔍 Validating project structure..."
-
-# Check required files
-required_files=(
-    "public/index.html"
-    "public/manifest.json"
-    "public/sw.js"
-    "src/app.js"
-    "src/data/mockData.js"
-    "src/services/dataService.js"
-    "vercel.json"
-)
-
-for file in "${required_files[@]}"; do
-    if [ ! -f "$file" ]; then
-        echo "❌ Error: Required file $file not found."
-        exit 1
-    fi
-done
-
-echo "✅ Project structure validation passed."
-
-# Check Git status
-if [ -n "$(git status --porcelain)" ]; then
-    echo "📋 You have uncommitted changes:"
-    git status --short
-    echo ""
-    read -p "Do you want to commit these changes? (y/n): " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        echo "💾 Adding and committing changes..."
-        git add .
-        read -p "Enter commit message (or press Enter for default): " commit_msg
-        if [ -z "$commit_msg" ]; then
-            commit_msg="Update OEM Procurement System"
-        fi
-        git commit -m "$commit_msg"
-    fi
+# Skip validation in CI/Vercel environment
+if [ "$VERCEL" = "1" ] || [ "$CI" = "true" ]; then
+    echo "🔧 Running in CI/Vercel environment - skipping validation"
 else
-    echo "✅ Git working directory is clean."
+    # Run basic validation
+    echo "🔍 Validating project structure..."
+
+    # Check required files
+    required_files=(
+        "public/index.html"
+        "public/manifest.json"
+        "public/sw.js"
+        "public/src/app.js"
+        "public/src/data/mockData.js"
+        "public/src/services/dataService.js"
+    )
+
+    for file in "${required_files[@]}"; do
+        if [ ! -f "$file" ]; then
+            echo "❌ Error: Required file $file not found."
+            exit 1
+        fi
+    done
+
+    echo "✅ Project structure validation passed."
+fi
+
+# Skip Git operations in CI/Vercel environment
+if [ "$VERCEL" = "1" ] || [ "$CI" = "true" ]; then
+    echo "🔧 Running in CI/Vercel environment - skipping Git operations"
+else
+    # Check Git status
+    if [ -n "$(git status --porcelain)" ]; then
+        echo "📋 You have uncommitted changes:"
+        git status --short
+        echo ""
+        read -p "Do you want to commit these changes? (y/n): " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            echo "💾 Adding and committing changes..."
+            git add .
+            read -p "Enter commit message (or press Enter for default): " commit_msg
+            if [ -z "$commit_msg" ]; then
+                commit_msg="Update OEM Procurement System"
+            fi
+            git commit -m "$commit_msg"
+        fi
+    else
+        echo "✅ Git working directory is clean."
+    fi
 fi
 
 echo ""

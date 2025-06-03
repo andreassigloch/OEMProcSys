@@ -1,0 +1,11 @@
+deploy.sh
+dev-server.py
+node_modules
+.git
+*.md
+!README.md
+.gitignore
+.DS_Store
+*.log
+.env*
+package-lock.json
