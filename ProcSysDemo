@@ -1,0 +1,252 @@
+<ol><li data-node-uuid="2a3978f8-6c09-48f2-b5c2-136bc79f578b"><span class="node-type protected">SYS:</span><span class="node-name protected">OEMProcurementSystem</span><span class="reference-indicator protected" title="No references">→</span><div class="node-description protected">A comprehensive procurement management system for OEMs that supports the entire purchasing cycle from strategic supplier selection to performance evaluation. The system enables efficient supplier relationship management, cost optimization, and quality standard compliance while providing transparency across all procurement processes. It facilitates data-driven decision making and integrates with existing ERP and logistics systems.</div><ol><li data-node-uuid="99709516-4d13-4c9e-a305-3ab8b56a2fed"><span class="node-type protected">UC:</span><span class="node-name protected">AccessProcurementInsights</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">Stakeholders view personalized dashboards showing KPIs, spend analytics, and supplier performance metrics. Provides interactive visualizations and actionable recommendations that drive continuous improvement in procurement outcomes.</div><ol class="nested-list"><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span><div class="node-description protected">Strategic leader responsible for supplier selection, relationship management, and procurement policy. Acts as triggering actor for supplier network optimization and contract negotiations, and receiving actor for procurement insights.</div></li><li data-node-uuid="f1d70dcd-d37d-4db5-aadd-6c14680dfc58"><span class="node-type protected">ACTOR:</span><span class="node-name protected">FinanceOfficer</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation">→</span><div class="node-description protected">Oversees procurement budgets, approves major expenditures, and analyzes cost implications. Receiving actor for contract negotiations and procurement insights, providing financial governance.</div></li><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span><div class="node-description protected">Operational staff handling day-to-day procurement activities including requisitions, orders, and delivery tracking. Triggering actor for streamlined purchasing and receiving actor for supplier quality information.</div></li><li data-node-uuid="27d27f10-292e-49c6-bed5-c074c2a52861"><span class="node-type protected">ACTOR:</span><span class="node-name protected">QualityAssurance</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: EnsureSupplyQuality
+FCHAIN: QualityVerification">→</span><div class="node-description protected">Team ensuring materials and components meet required specifications and standards. Triggering actor for quality verification processes and receiving actor for supplier performance data.</div></li><li data-node-uuid="e5f0ec4e-0108-4bf7-a5be-0ea05308ab04"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-001</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiLoadDashboardData">→</span><div class="node-description protected">ProcurementManager needs personalized KPI dashboards for data-driven decisions. Result: Critical metrics visible within 2 clicks meeting role-specific needs.</div></li><li data-node-uuid="4b8cc20f-d2a4-48ff-a1bf-d7f94a616945"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-002</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiGenerateVisualizations">→</span><div class="node-description protected">FinanceOfficer needs spend analytics visualizations to identify cost-saving opportunities. Result: Spend patterns visible by category, supplier, and time period.</div></li><li data-node-uuid="05eb4974-38ad-4bdb-b7a9-d2e94cae6b01"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-003</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiDeliverPersonalizedView">→</span><div class="node-description protected">PurchasingAgent needs responsive dashboard access under 3 seconds for time-sensitive decisions. Result: Performance maintained even during peak usage periods.</div></li><li data-node-uuid="a197a9ca-608f-4948-8e7c-b3b27e0867c3"><span class="node-type protected">FCHAIN:</span><span class="node-name protected">InsightDelivery</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights">→</span><div class="node-description protected">Processes and delivers personalized procurement analytics to stakeholders</div><ol class="flow-list fchain-list"><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="f1d70dcd-d37d-4db5-aadd-6c14680dfc58"><span class="node-type protected">ACTOR:</span><span class="node-name protected">FinanceOfficer</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation">→</span></li><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span></li><li data-node-uuid="edfbec03-1384-4766-a3ec-30493244e0dd"><span class="node-type protected">FUNC:</span><span class="node-name protected">PiLoadDashboardData</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: InsightDelivery">→</span><div class="node-description protected">Retrieves and processes procurement metrics data for visualization</div><ol><li data-node-uuid="e5f0ec4e-0108-4bf7-a5be-0ea05308ab04"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-001</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiLoadDashboardData">→</span></li></ol></li><li data-node-uuid="11619239-fd3a-4f25-bcb8-7f37e441d6c6"><span class="node-type protected">FUNC:</span><span class="node-name protected">PiGenerateVisualizations</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: InsightDelivery">→</span><div class="node-description protected">Creates interactive charts and graphs based on procurement data</div><ol><li data-node-uuid="4b8cc20f-d2a4-48ff-a1bf-d7f94a616945"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-002</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiGenerateVisualizations">→</span></li></ol></li><li data-node-uuid="c4721449-b9ff-4746-9967-203b9550cc96"><span class="node-type protected">FUNC:</span><span class="node-name protected">PiDeliverPersonalizedView</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: InsightDelivery">→</span><div class="node-description protected">Filters and customizes dashboard content based on user role</div><ol><li data-node-uuid="05eb4974-38ad-4bdb-b7a9-d2e94cae6b01"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-PI-003</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+FUNC: PiDeliverPersonalizedView">→</span></li></ol></li></ol></li></ol></li><li data-node-uuid="bbc889c5-2ec2-429c-8d47-6b1f5636da96"><span class="node-type protected">UC:</span><span class="node-name protected">EnsureSupplyQuality</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">Quality Assurance validates incoming materials against specifications to prevent production issues. Includes inspection scheduling, compliance verification, and defect tracking to maintain product quality while reducing rejection rates.</div><ol class="nested-list"><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="27d27f10-292e-49c6-bed5-c074c2a52861"><span class="node-type protected">ACTOR:</span><span class="node-name protected">QualityAssurance</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: EnsureSupplyQuality
+FCHAIN: QualityVerification">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span><div class="node-description protected">External organization providing materials, components, or services to the OEM. Receiving actor for contract negotiations and purchase orders, while serving as triggering actor for quality verification processes.</div></li><li data-node-uuid="a36a91a6-96f5-4ad1-80f5-e3721001039d"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-001</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqScheduleInspections">→</span><div class="node-description protected">QualityAssurance needs automated inspection scheduling to ensure timely verification. Result: Prioritized inspection queue based on delivery dates and criticality.</div></li><li data-node-uuid="f42bd719-cfe8-43c2-82e2-6b1ea02e636c"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-002</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqTrackDefects">→</span><div class="node-description protected">QualityAssurance needs standardized defect tracking to maintain quality standards. Result: Categorized defect records with severity, frequency, and supplier correlation.</div></li><li data-node-uuid="48579c1a-a58a-43c7-8508-9957dcf80b55"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-003</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqVerifyCompliance">→</span><div class="node-description protected">PurchasingAgent needs quality verification results within 24 hours for timely supplier feedback. Result: Completed inspections available for review within one business day.</div></li><li data-node-uuid="73e8981e-916a-461d-94fc-c7e7a15b9006"><span class="node-type protected">FCHAIN:</span><span class="node-name protected">QualityVerification</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality">→</span><div class="node-description protected">Manages quality inspection process from scheduling to defect tracking</div><ol class="flow-list fchain-list"><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="b3e70f4f-dd74-4604-b08b-4be00f3b57ac"><span class="node-type protected">FUNC:</span><span class="node-name protected">SqScheduleInspections</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: QualityVerification">→</span><div class="node-description protected">Prioritizes and schedules quality verification activities</div><ol><li data-node-uuid="a36a91a6-96f5-4ad1-80f5-e3721001039d"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-001</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqScheduleInspections">→</span></li></ol></li><li data-node-uuid="11dfd98c-1acf-484c-819b-0892d5bc49a7"><span class="node-type protected">FUNC:</span><span class="node-name protected">SqVerifyCompliance</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: QualityVerification">→</span><div class="node-description protected">Validates materials against specifications and standards</div><ol><li data-node-uuid="48579c1a-a58a-43c7-8508-9957dcf80b55"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-003</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqVerifyCompliance">→</span></li></ol></li><li data-node-uuid="0cc3428e-e935-41cb-8096-0a5090f79901"><span class="node-type protected">FUNC:</span><span class="node-name protected">SqTrackDefects</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: QualityVerification">→</span><div class="node-description protected">Records and categorizes quality issues for analysis</div><ol><li data-node-uuid="f42bd719-cfe8-43c2-82e2-6b1ea02e636c"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SQ-002</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+FUNC: SqTrackDefects">→</span></li></ol></li><li data-node-uuid="27d27f10-292e-49c6-bed5-c074c2a52861"><span class="node-type protected">ACTOR:</span><span class="node-name protected">QualityAssurance</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: EnsureSupplyQuality
+FCHAIN: QualityVerification">→</span></li><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span></li></ol></li></ol></li><li data-node-uuid="49a38c30-83e7-40fa-858e-0388afd8b81f"><span class="node-type protected">UC:</span><span class="node-name protected">NegotiateOptimalTerms</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">Procurement Manager secures favorable contracts that balance cost, quality, and delivery requirements. Provides negotiation support, comparison tools, and scenario modeling to achieve optimal terms while maintaining strong supplier relationships.</div><ol class="nested-list"><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span></li><li data-node-uuid="f1d70dcd-d37d-4db5-aadd-6c14680dfc58"><span class="node-type protected">ACTOR:</span><span class="node-name protected">FinanceOfficer</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="94956c2e-26b1-40c1-9cfc-9cc16e001ede"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-001</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoCompareTerms">→</span><div class="node-description protected">ProcurementManager needs contract comparison tools to identify optimal terms. Result: Side-by-side comparison of key contract elements with highlighting of favorable conditions.</div></li><li data-node-uuid="24890610-a615-45fe-95ab-c1684df07702"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-002</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoModelScenarios">→</span><div class="node-description protected">FinanceOfficer needs cost impact analysis for contract scenarios. Result: Financial projections showing cost implications of different contract terms over time.</div></li><li data-node-uuid="ca9a3819-871e-4fd1-a8fb-d9b15ca82fd9"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-003</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoSecureDocExchange">→</span><div class="node-description protected">Supplier needs secure access to negotiation documents with 99.9% availability. Result: Confidential contract data protected while ensuring reliable access.</div></li><li data-node-uuid="19a3795a-4823-4c3e-a5c8-7009dd997fdb"><span class="node-type protected">FCHAIN:</span><span class="node-name protected">ContractNegotiation</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms">→</span><div class="node-description protected">Supports contract analysis and negotiation with suppliers</div><ol class="flow-list fchain-list"><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span></li><li data-node-uuid="0295f355-97e4-4ad9-b5e1-faed9d6cc3f8"><span class="node-type protected">FUNC:</span><span class="node-name protected">NoCompareTerms</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: ContractNegotiation">→</span><div class="node-description protected">Analyzes and compares contract terms across proposals</div><ol><li data-node-uuid="94956c2e-26b1-40c1-9cfc-9cc16e001ede"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-001</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoCompareTerms">→</span></li></ol></li><li data-node-uuid="46177e66-50a8-439a-9e94-f92e5dc07489"><span class="node-type protected">FUNC:</span><span class="node-name protected">NoModelScenarios</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: ContractNegotiation">→</span><div class="node-description protected">Simulates financial impact of different contract options</div><ol><li data-node-uuid="24890610-a615-45fe-95ab-c1684df07702"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-002</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoModelScenarios">→</span></li></ol></li><li data-node-uuid="b8ebd4ad-6f34-49c8-9746-7ce55254ea66"><span class="node-type protected">FUNC:</span><span class="node-name protected">NoSecureDocExchange</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: ContractNegotiation">→</span><div class="node-description protected">Facilitates secure sharing of negotiation documents</div><ol><li data-node-uuid="ca9a3819-871e-4fd1-a8fb-d9b15ca82fd9"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-OT-003</span><span class="reference-indicator protected" title="Used in:
+UC: NegotiateOptimalTerms
+FUNC: NoSecureDocExchange">→</span></li></ol></li><li data-node-uuid="f1d70dcd-d37d-4db5-aadd-6c14680dfc58"><span class="node-type protected">ACTOR:</span><span class="node-name protected">FinanceOfficer</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li></ol></li></ol></li><li data-node-uuid="650e4ca1-d11d-419e-b6d7-1074d2fa9222"><span class="node-type protected">UC:</span><span class="node-name protected">OptimizeSupplierNetwork</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">Procurement Manager evaluates and selects optimal suppliers to build a resilient and cost-effective supply chain. Includes strategic sourcing, risk assessment, and relationship development to ensure supply security while maximizing value and innovation opportunities.</div><ol class="nested-list"><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="d952d3df-f9cf-45b4-9c03-72892e1a36f3"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-001</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsAssessSupplierRisk">→</span><div class="node-description protected">ProcurementManager needs supplier risk assessment tools to ensure supply chain resilience. Result: Risk scores calculated from financial, geographic, and performance factors.</div></li><li data-node-uuid="43b7bd9a-060b-4f88-b3a9-dcb2ebf4d367"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-002</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsAnalyzePerformance">→</span><div class="node-description protected">ProcurementManager needs supplier performance history to make informed selection decisions. Result: Comprehensive performance records accessible within supplier profiles.</div></li><li data-node-uuid="9c99a8a1-ab3e-4768-a07c-23610f89f0b6"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-003</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsRankSuppliers">→</span><div class="node-description protected">Supplier needs transparent evaluation criteria to understand selection decisions. Result: Clear visibility of assessment methodology and improvement areas.</div></li><li data-node-uuid="ab0d0a43-8470-4cf2-9abb-713977c4708f"><span class="node-type protected">FCHAIN:</span><span class="node-name protected">SupplierSelection</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork">→</span><div class="node-description protected">Evaluates and selects optimal suppliers for the supply chain</div><ol class="flow-list fchain-list"><li data-node-uuid="6daaf444-76bb-4058-a5af-e5f48ea9dbb1"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ProcurementManager</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+FCHAIN: InsightDelivery
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection">→</span></li><li data-node-uuid="724afd40-fd2d-4402-88d9-ce5f4f859b43"><span class="node-type protected">FUNC:</span><span class="node-name protected">OsAssessSupplierRisk</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: SupplierSelection">→</span><div class="node-description protected">Evaluates supplier risk profiles using multiple factors</div><ol><li data-node-uuid="d952d3df-f9cf-45b4-9c03-72892e1a36f3"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-001</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsAssessSupplierRisk">→</span></li></ol></li><li data-node-uuid="ec89537c-0f57-43ba-9690-c7098bfe32fb"><span class="node-type protected">FUNC:</span><span class="node-name protected">OsAnalyzePerformance</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: SupplierSelection">→</span><div class="node-description protected">Reviews historical supplier performance data</div><ol><li data-node-uuid="43b7bd9a-060b-4f88-b3a9-dcb2ebf4d367"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-002</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsAnalyzePerformance">→</span></li></ol></li><li data-node-uuid="55adfb6d-a261-404a-85a4-2f3bc945ac56"><span class="node-type protected">FUNC:</span><span class="node-name protected">OsRankSuppliers</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: SupplierSelection">→</span><div class="node-description protected">Prioritizes suppliers based on criteria matching</div><ol><li data-node-uuid="9c99a8a1-ab3e-4768-a07c-23610f89f0b6"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SN-003</span><span class="reference-indicator protected" title="Used in:
+UC: OptimizeSupplierNetwork
+FUNC: OsRankSuppliers">→</span></li></ol></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li></ol></li></ol></li><li data-node-uuid="436866b6-da23-48ff-af33-ccbec1f6e564"><span class="node-type protected">UC:</span><span class="node-name protected">StreamlinePurchasing</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">Purchasing Agent efficiently manages procurement cycles from requisition to receipt. Automates routine orders, tracks delivery status, and resolves exceptions to ensure production continuity while minimizing administrative overhead.</div><ol class="nested-list"><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="56084e5a-b322-45fb-a5cd-aa1b889840bf"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ERPSystem</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FCHAIN: OrderManagement">→</span><div class="node-description protected">Enterprise software handling core business processes. Receiving actor for procurement data and triggering actor for purchase requisitions, ensuring seamless information flow across the organization.</div></li><li data-node-uuid="0ed175f2-6588-45ab-b719-eb63268b8882"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-001</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpProcessRequisitions">→</span><div class="node-description protected">PurchasingAgent needs automated order processing to reduce manual effort. Result: Routine orders generated and submitted without manual intervention based on predefined rules.</div></li><li data-node-uuid="69720e81-978c-49f3-ad9d-6886da030d7b"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-002</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpTrackDeliveries">→</span><div class="node-description protected">PurchasingAgent needs real-time delivery tracking to manage production schedules. Result: Current status of all orders visible with estimated arrival times and delay alerts.</div></li><li data-node-uuid="4ceb6a69-9686-4b47-add1-55c787a8d8cd"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-003</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpSyncWithERP">→</span><div class="node-description protected">ERPSystem needs standardized data exchange for seamless integration. Result: Compatible data formats ensuring accurate information flow between systems.</div></li><li data-node-uuid="69fe5de8-e894-4ea1-9c9d-cdcfee52a416"><span class="node-type protected">FCHAIN:</span><span class="node-name protected">OrderManagement</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing">→</span><div class="node-description protected">Handles the purchase order lifecycle from creation to delivery</div><ol class="flow-list fchain-list"><li data-node-uuid="31a79e18-fe67-460b-8521-5114efb35520"><span class="node-type protected">ACTOR:</span><span class="node-name protected">PurchasingAgent</span><span class="reference-indicator protected" title="Used in:
+UC: AccessProcurementInsights
+UC: StreamlinePurchasing
+UC: EnsureSupplyQuality
+FCHAIN: InsightDelivery
+FCHAIN: QualityVerification
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="6f8dad29-030d-446c-a7ee-62848fff632c"><span class="node-type protected">ACTOR:</span><span class="node-name protected">Supplier</span><span class="reference-indicator protected" title="Used in:
+UC: EnsureSupplyQuality
+UC: OptimizeSupplierNetwork
+UC: NegotiateOptimalTerms
+UC: StreamlinePurchasing
+FCHAIN: QualityVerification
+FCHAIN: ContractNegotiation
+FCHAIN: SupplierSelection
+FCHAIN: OrderManagement">→</span></li><li data-node-uuid="f595f1fb-3ea1-4949-929f-96b1d74eb75f"><span class="node-type protected">FUNC:</span><span class="node-name protected">SpProcessRequisitions</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: OrderManagement">→</span><div class="node-description protected">Converts requisitions into purchase orders</div><ol><li data-node-uuid="0ed175f2-6588-45ab-b719-eb63268b8882"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-001</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpProcessRequisitions">→</span></li></ol></li><li data-node-uuid="23c91104-c27e-467b-bf0e-bdab53f0703e"><span class="node-type protected">FUNC:</span><span class="node-name protected">SpTrackDeliveries</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: OrderManagement">→</span><div class="node-description protected">Monitors order status and delivery timelines</div><ol><li data-node-uuid="69720e81-978c-49f3-ad9d-6886da030d7b"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-002</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpTrackDeliveries">→</span></li></ol></li><li data-node-uuid="82def630-8907-46e7-8ce3-f53dc66ef0b2"><span class="node-type protected">FUNC:</span><span class="node-name protected">SpSyncWithERP</span><span class="reference-indicator protected" title="Used in:
+FCHAIN: OrderManagement">→</span><div class="node-description protected">Exchanges data with enterprise systems</div><ol><li data-node-uuid="4ceb6a69-9686-4b47-add1-55c787a8d8cd"><span class="node-type protected">REQ:</span><span class="node-name protected">REQ-SP-003</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FUNC: SpSyncWithERP">→</span></li></ol></li><li data-node-uuid="56084e5a-b322-45fb-a5cd-aa1b889840bf"><span class="node-type protected">ACTOR:</span><span class="node-name protected">ERPSystem</span><span class="reference-indicator protected" title="Used in:
+UC: StreamlinePurchasing
+FCHAIN: OrderManagement">→</span></li></ol></li></ol></li><li data-node-uuid="8f6c5f08-2114-4853-9edb-c148db0a719b"><span class="node-type protected">REQ:</span><span class="node-name protected">SystemAnalysis</span><span class="reference-indicator protected" title="Used in:
+SYS: OEMProcurementSystem">→</span><div class="node-description protected">System Boundaries: The OEM Procurement System encompasses supplier management, contract negotiation, order processing, quality control, and performance analytics. It interfaces with ERP, logistics, and financial systems but excludes internal manufacturing processes and detailed financial accounting.<br><br>Primary Stakeholders: Procurement Managers direct strategic sourcing and supplier relationships. Purchasing Agents handle day-to-day ordering. Quality Assurance ensures compliance. Finance Officers oversee cost aspects. Suppliers interact through a portal for orders, invoices, and performance feedback.<br><br>Key Interactions: Stakeholders collaborate on supplier selection, contract negotiation, order placement, quality inspection, and performance evaluation. The system facilitates data exchange with ERP systems, supplier portals, and analytics dashboards.<br><br>Critical Requirements: The system must provide end-to-end visibility, ensure compliance with quality standards, optimize costs, maintain audit trails, enable data-driven decisions, and integrate seamlessly with existing enterprise systems.</div></li></ol></li></ol>

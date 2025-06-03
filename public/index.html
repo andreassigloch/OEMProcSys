@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEM Procurement System</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Comprehensive procurement management system for OEMs">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OEM Procurement">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="spinner"></div>
+            <p>Loading OEM Procurement System...</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="main-nav">
+            <div class="nav-brand">
+                <i class="fas fa-industry"></i>
+                <span>OEM Procurement</span>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-item active" data-view="insights">
+                    <i class="fas fa-chart-dashboard"></i>
+                    <span>Insights</span>
+                </button>
+                <button class="nav-item" data-view="quality">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Quality</span>
+                </button>
+                <button class="nav-item" data-view="contracts">
+                    <i class="fas fa-handshake"></i>
+                    <span>Contracts</span>
+                </button>
+                <button class="nav-item" data-view="suppliers">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Suppliers</span>
+                </button>
+                <button class="nav-item" data-view="purchasing">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Purchasing</span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            
+            <!-- Insights View -->
+            <div class="view" id="insights-view">
+                <div class="view-header">
+                    <h1>Procurement Insights</h1>
+                    <p>Personalized dashboards showing KPIs, spend analytics, and supplier performance metrics</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Key Performance Indicators</h3>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="kpi-grid" id="kpi-grid">
+                            <!-- KPIs will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Spend Analytics</h3>
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <canvas id="spend-chart"></canvas>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Supplier Performance</h3>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <canvas id="supplier-performance-chart"></canvas>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Activities</h3>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="activity-list" id="activity-list">
+                            <!-- Activities will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality View -->
+            <div class="view hidden" id="quality-view">
+                <div class="view-header">
+                    <h1>Supply Quality Management</h1>
+                    <p>Quality validation, inspection scheduling, and defect tracking</p>
+                </div>
+                
+                <div class="quality-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Inspection Schedule</h3>
+                            <button class="btn btn-primary" id="schedule-inspection-btn">
+                                <i class="fas fa-plus"></i> Schedule Inspection
+                            </button>
+                        </div>
+                        <div class="inspection-list" id="inspection-list">
+                            <!-- Inspections will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quality Metrics</h3>
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <canvas id="quality-chart"></canvas>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Defect Tracking</h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="defect-list" id="defect-list">
+                            <!-- Defects will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contracts View -->
+            <div class="view hidden" id="contracts-view">
+                <div class="view-header">
+                    <h1>Contract Negotiation</h1>
+                    <p>Contract comparison, scenario modeling, and secure document exchange</p>
+                </div>
+                
+                <div class="contracts-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Active Negotiations</h3>
+                            <button class="btn btn-primary" id="new-negotiation-btn">
+                                <i class="fas fa-plus"></i> New Negotiation
+                            </button>
+                        </div>
+                        <div class="negotiations-list" id="negotiations-list">
+                            <!-- Negotiations will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Contract Comparison</h3>
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="contract-comparison" id="contract-comparison">
+                            <!-- Comparison will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Scenario Modeling</h3>
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="scenario-modeling" id="scenario-modeling">
+                            <!-- Scenarios will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suppliers View -->
+            <div class="view hidden" id="suppliers-view">
+                <div class="view-header">
+                    <h1>Supplier Network Optimization</h1>
+                    <p>Supplier risk assessment, performance analysis, and ranking</p>
+                </div>
+                
+                <div class="suppliers-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Supplier Directory</h3>
+                            <button class="btn btn-primary" id="add-supplier-btn">
+                                <i class="fas fa-plus"></i> Add Supplier
+                            </button>
+                        </div>
+                        <div class="supplier-list" id="supplier-list">
+                            <!-- Suppliers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Risk Assessment</h3>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <canvas id="risk-chart"></canvas>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Performance Rankings</h3>
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="ranking-list" id="ranking-list">
+                            <!-- Rankings will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchasing View -->
+            <div class="view hidden" id="purchasing-view">
+                <div class="view-header">
+                    <h1>Streamlined Purchasing</h1>
+                    <p>Order automation, delivery tracking, and ERP integration</p>
+                </div>
+                
+                <div class="purchasing-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Purchase Orders</h3>
+                            <button class="btn btn-primary" id="create-order-btn">
+                                <i class="fas fa-plus"></i> Create Order
+                            </button>
+                        </div>
+                        <div class="orders-list" id="orders-list">
+                            <!-- Orders will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Delivery Tracking</h3>
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="delivery-tracking" id="delivery-tracking">
+                            <!-- Tracking will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>ERP Integration Status</h3>
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="erp-status" id="erp-status">
+                            <!-- ERP status will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for forms -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/src/data/mockData.js"></script>
+    <script src="/src/services/dataService.js"></script>
+    <script src="/src/components/insights.js"></script>
+    <script src="/src/components/quality.js"></script>
+    <script src="/src/components/contracts.js"></script>
+    <script src="/src/components/suppliers.js"></script>
+    <script src="/src/components/purchasing.js"></script>
+    <script src="/src/app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

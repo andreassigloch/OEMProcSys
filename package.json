@@ -1,0 +1,55 @@
+{
+  "name": "oem-procurement-system",
+  "version": "1.0.0",
+  "description": "Comprehensive procurement management system for OEMs",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npx serve public -s -l 3000",
+    "build": "echo 'No build step required for vanilla JS PWA'",
+    "dev": "npx serve public -s -l 3000 --reload",
+    "prepare": "./deploy.sh",
+    "validate": "echo 'Validating project structure...' && test -f public/index.html && test -f public/manifest.json && test -f public/sw.js && echo 'Validation passed!'",
+    "lint": "echo 'Linting not configured'",
+    "test": "echo 'Tests not configured'"
+  },
+  "keywords": [
+    "procurement",
+    "oem",
+    "supply-chain",
+    "pwa",
+    "manufacturing",
+    "suppliers",
+    "quality-management",
+    "contracts",
+    "purchasing"
+  ],
+  "author": "OEM Procurement Team",
+  "license": "MIT",
+  "homepage": "https://oem-procurement-system.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/company/oem-procurement-system.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "pwa": {
+    "name": "OEM Procurement System",
+    "short_name": "OEM Procurement",
+    "theme_color": "#2563eb",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+  }
+}

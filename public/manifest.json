@@ -1,0 +1,114 @@
+{
+  "name": "OEM Procurement System",
+  "short_name": "OEM Procurement",
+  "description": "Comprehensive procurement management system for OEMs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Procurement Insights",
+      "short_name": "Insights",
+      "description": "View procurement dashboards and KPIs",
+      "url": "/?view=insights",
+      "icons": [
+        {
+          "src": "/icons/shortcut-insights.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Quality Management",
+      "short_name": "Quality",
+      "description": "Manage supply quality and inspections",
+      "url": "/?view=quality",
+      "icons": [
+        {
+          "src": "/icons/shortcut-quality.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Purchase Orders",
+      "short_name": "Orders",
+      "description": "Create and track purchase orders",
+      "url": "/?view=purchasing",
+      "icons": [
+        {
+          "src": "/icons/shortcut-orders.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
